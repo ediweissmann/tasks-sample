@@ -1,4 +1,6 @@
-This is your new Play 2.0 application
+Tasks
 =====================================
 
-This file will be packaged with your application, when using `play dist`.
+Sample application using Playframework (2.0.4) and Squeryl on backend and Jquery, Handlebars and Twitter Bootstrap on frontend.
+
+To run it, use `play run`.
