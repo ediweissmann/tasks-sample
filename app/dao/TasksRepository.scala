@@ -13,7 +13,7 @@ trait TasksRepository {
 class SquerylTaskRepository extends TasksRepository {
   override def list() = inTransaction {
     from(tasksTable)(row => select(row))
-      .toList
+      .toList.reverse
   }
 
   override def add(title: String): Task = inTransaction {
