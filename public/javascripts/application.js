@@ -55,7 +55,7 @@ var TasksModule = (function () {
     initEvents = function() {
         grid().click(function(event) {
             var $target = $(event.target);
-            if($target.hasClass("close")) {
+            if($target.hasClass("delete")) {
                 deleteTask($target.data("task-id"));
             }
         });
