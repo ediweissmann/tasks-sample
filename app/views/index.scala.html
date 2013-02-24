@@ -1,7 +1,20 @@
-@(message: String)
+@main("Tasks") {
 
-@main("Welcome to Play 2.0") {
-    
-    @play20.welcome(message)
-    
+<table id="tasks" class="table table-bordered">
+    <thead>
+    <tr>
+        <th>My tasks</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Loading tasks...</td>
+    </tr>
+    <script id="task-row-template" type="text/x-handlebars-template">
+        <tr>
+            <td>{{title}}</td>
+        </tr>
+    </script>
+    </tbody>
+</table>
 }

@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 50px;
+}
+
+header {
+    padding-bottom: 20px;
+}
+
+#tasks {
+    width: 500px;
+}
+
+#tasks thead {
+    background-color: #F9F9F9;
+}

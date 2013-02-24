@@ -2,10 +2,9 @@ package controllers
 
 import com.codahale.jerkson.Json._
 import play.api.mvc._
-import dao.SquerylTaskRepository
+import dao.{Repositories}
 
-object TasksController extends Controller {
-  val tasks = new SquerylTaskRepository
+object TasksController extends Controller with Repositories {
 
   def list() = Action {
     Ok(generate(tasks.list()))
