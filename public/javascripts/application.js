@@ -52,6 +52,31 @@ var TasksModule = (function () {
         });
     },
 
+    initEvents = function() {
+        grid().click(function(event) {
+            var $target = $(event.target);
+            if($target.hasClass("close")) {
+                deleteTask($target.data("task-id"));
+            }
+        });
+    },
+
+    deleteTask = function(taskId) {
+        $.ajax({
+            type: "POST",
+            url: "/tasks/delete/" + taskId,
+            success: function(data){
+                if(data.success) {
+                    reload();
+                    resetForm();
+                } else {
+                    // todo: handle validation failure
+                }
+            },
+            dataType: "json"
+        });
+    },
+
     // public api
     reload = function () {
         $.getJSON('/tasks/list', function (data) {
@@ -65,6 +90,7 @@ var TasksModule = (function () {
     onReady = function () {
         reload();
         initCreateForm();
+        initEvents();
     };
 
     // register document load

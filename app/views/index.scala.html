@@ -19,7 +19,10 @@
     </tr>
     <script id="task-row-template" type="text/x-handlebars-template">
         <tr>
-            <td>{{title}}</td>
+            <td>
+                {{title}}
+                <button type="button" class="close" data-task-id="{{id}}">&times;</button>
+            </td>
         </tr>
     </script>
     </tbody>

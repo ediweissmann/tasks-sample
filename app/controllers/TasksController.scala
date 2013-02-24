@@ -20,4 +20,13 @@ object TasksController extends Controller with Repositories with EitherWrap with
       response => okResponse()
     )
   }
+
+  def delete(taskId: Long) = Action {
+    asEither {
+      tasks.remove(taskId)
+    }.fold(
+      exception => errorResponse(exception),
+      response => okResponse()
+    )
+  }
 }
