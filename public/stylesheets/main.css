@@ -53,3 +53,15 @@ button.delete {
 td:hover .delete {
     color: #BBB;
 }
+
+#tasks input[type='checkbox'] {
+    opacity: 0;
+}
+
+#tasks tr:hover input[type='checkbox'] {
+    opacity: 1;
+}
+
+.completed-task {
+    text-decoration: line-through;
+}

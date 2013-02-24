@@ -20,8 +20,10 @@
     <script id="task-row-template" type="text/x-handlebars-template">
         <tr>
             <td>
-                {{title}}
-                <button type="button" class="delete" data-task-id="{{id}}">&times;</button>
+                <label class="checkbox task" id="task{{id}}">
+                    <input type="checkbox" class="complete" data-task-id="{{id}}"> {{title}}
+                    <button type="button" class="delete" data-task-id="{{id}}">&times;</button>
+                </label>
             </td>
         </tr>
     </script>

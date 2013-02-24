@@ -55,8 +55,11 @@ var TasksModule = (function () {
     initEvents = function() {
         grid().click(function(event) {
             var $target = $(event.target);
+            var taskId = $target.data("task-id");
             if($target.hasClass("delete")) {
-                deleteTask($target.data("task-id"));
+                deleteTask(taskId);
+            } else if($target.hasClass("complete")) {
+                markAsCompletedTask(taskId);
             }
         });
     },
@@ -75,6 +78,11 @@ var TasksModule = (function () {
             },
             dataType: "json"
         });
+    },
+
+    markAsCompletedTask = function(taskId) {
+        $("#task" + taskId).addClass("completed-task");
+        // todo: call the server
     },
 
     // public api
